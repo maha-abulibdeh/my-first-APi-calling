@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script type="text/javascript" src="jquery.js"></script>
+
+    </head>
+    <body>
+      
+            <input type="text" id="city">
+            <button id="search">Search</button>
+  
+
+
+<script>
+$( document ).ready(function() {
+    $("#search").click(function () {   
+      var n1 = $('#city').val();
+        alert(n1);
+        $.ajax({
+                type: "Get",
+                 url:"https://api.openweathermap.org/data/2.5/weather?q="+n1+"&appid=50a7aa80fa492fa92e874d23ad061374",
+                success:function(data)
+                {
+                
+                        console.log(data);
+                    
+                    console.log(data.main.temp + 273.15);
+                    }
+        });
+    });
+            
+            
+
+});
+
+
+</script>
+    </body>
+</html>
